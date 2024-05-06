@@ -24,7 +24,7 @@ public class MenuScreen : MonoBehaviour
     void Play()
     {
         //Debug.Log("Play!");
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Level_1");
     }
 
     void Tutorial()

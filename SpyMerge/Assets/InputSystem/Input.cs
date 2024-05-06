@@ -91,7 +91,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Inventory"",
+                    ""name"": ""ToggleInventory"",
                     ""type"": ""Button"",
                     ""id"": ""3ba2aa45-af39-4c3b-9ce3-32de5721f9d0"",
                     ""expectedControlType"": ""Button"",
@@ -100,9 +100,27 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pause"",
+                    ""name"": ""TogglePauseMenu"",
                     ""type"": ""Button"",
                     ""id"": ""bd1ed9b0-b73b-4ff0-982d-7f50621c9983"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UseItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""59c4ede4-4409-41e5-8282-d4213917c955"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DeselectItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""c0eabb3d-383f-42ee-ac5a-0081b2e24f70"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -249,7 +267,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Inventory"",
+                    ""action"": ""ToggleInventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -260,7 +278,29 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Pause"",
+                    ""action"": ""TogglePauseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""292ffed0-d522-4cad-9686-7e2a15fa0631"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""683d630a-1e3a-4f56-a64e-c99a0ff6cabc"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DeselectItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -278,8 +318,10 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_PlayerInput_Speed = m_PlayerInput.FindAction("Speed", throwIfNotFound: true);
         m_PlayerInput_UseItem1 = m_PlayerInput.FindAction("UseItem1", throwIfNotFound: true);
         m_PlayerInput_UseItem2 = m_PlayerInput.FindAction("UseItem2", throwIfNotFound: true);
-        m_PlayerInput_Inventory = m_PlayerInput.FindAction("Inventory", throwIfNotFound: true);
-        m_PlayerInput_Pause = m_PlayerInput.FindAction("Pause", throwIfNotFound: true);
+        m_PlayerInput_ToggleInventory = m_PlayerInput.FindAction("ToggleInventory", throwIfNotFound: true);
+        m_PlayerInput_TogglePauseMenu = m_PlayerInput.FindAction("TogglePauseMenu", throwIfNotFound: true);
+        m_PlayerInput_UseItem = m_PlayerInput.FindAction("UseItem", throwIfNotFound: true);
+        m_PlayerInput_DeselectItem = m_PlayerInput.FindAction("DeselectItem", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -348,8 +390,10 @@ public partial class @Input: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerInput_Speed;
     private readonly InputAction m_PlayerInput_UseItem1;
     private readonly InputAction m_PlayerInput_UseItem2;
-    private readonly InputAction m_PlayerInput_Inventory;
-    private readonly InputAction m_PlayerInput_Pause;
+    private readonly InputAction m_PlayerInput_ToggleInventory;
+    private readonly InputAction m_PlayerInput_TogglePauseMenu;
+    private readonly InputAction m_PlayerInput_UseItem;
+    private readonly InputAction m_PlayerInput_DeselectItem;
     public struct PlayerInputActions
     {
         private @Input m_Wrapper;
@@ -361,8 +405,10 @@ public partial class @Input: IInputActionCollection2, IDisposable
         public InputAction @Speed => m_Wrapper.m_PlayerInput_Speed;
         public InputAction @UseItem1 => m_Wrapper.m_PlayerInput_UseItem1;
         public InputAction @UseItem2 => m_Wrapper.m_PlayerInput_UseItem2;
-        public InputAction @Inventory => m_Wrapper.m_PlayerInput_Inventory;
-        public InputAction @Pause => m_Wrapper.m_PlayerInput_Pause;
+        public InputAction @ToggleInventory => m_Wrapper.m_PlayerInput_ToggleInventory;
+        public InputAction @TogglePauseMenu => m_Wrapper.m_PlayerInput_TogglePauseMenu;
+        public InputAction @UseItem => m_Wrapper.m_PlayerInput_UseItem;
+        public InputAction @DeselectItem => m_Wrapper.m_PlayerInput_DeselectItem;
         public InputActionMap Get() { return m_Wrapper.m_PlayerInput; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -393,12 +439,18 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @UseItem2.started += instance.OnUseItem2;
             @UseItem2.performed += instance.OnUseItem2;
             @UseItem2.canceled += instance.OnUseItem2;
-            @Inventory.started += instance.OnInventory;
-            @Inventory.performed += instance.OnInventory;
-            @Inventory.canceled += instance.OnInventory;
-            @Pause.started += instance.OnPause;
-            @Pause.performed += instance.OnPause;
-            @Pause.canceled += instance.OnPause;
+            @ToggleInventory.started += instance.OnToggleInventory;
+            @ToggleInventory.performed += instance.OnToggleInventory;
+            @ToggleInventory.canceled += instance.OnToggleInventory;
+            @TogglePauseMenu.started += instance.OnTogglePauseMenu;
+            @TogglePauseMenu.performed += instance.OnTogglePauseMenu;
+            @TogglePauseMenu.canceled += instance.OnTogglePauseMenu;
+            @UseItem.started += instance.OnUseItem;
+            @UseItem.performed += instance.OnUseItem;
+            @UseItem.canceled += instance.OnUseItem;
+            @DeselectItem.started += instance.OnDeselectItem;
+            @DeselectItem.performed += instance.OnDeselectItem;
+            @DeselectItem.canceled += instance.OnDeselectItem;
         }
 
         private void UnregisterCallbacks(IPlayerInputActions instance)
@@ -424,12 +476,18 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @UseItem2.started -= instance.OnUseItem2;
             @UseItem2.performed -= instance.OnUseItem2;
             @UseItem2.canceled -= instance.OnUseItem2;
-            @Inventory.started -= instance.OnInventory;
-            @Inventory.performed -= instance.OnInventory;
-            @Inventory.canceled -= instance.OnInventory;
-            @Pause.started -= instance.OnPause;
-            @Pause.performed -= instance.OnPause;
-            @Pause.canceled -= instance.OnPause;
+            @ToggleInventory.started -= instance.OnToggleInventory;
+            @ToggleInventory.performed -= instance.OnToggleInventory;
+            @ToggleInventory.canceled -= instance.OnToggleInventory;
+            @TogglePauseMenu.started -= instance.OnTogglePauseMenu;
+            @TogglePauseMenu.performed -= instance.OnTogglePauseMenu;
+            @TogglePauseMenu.canceled -= instance.OnTogglePauseMenu;
+            @UseItem.started -= instance.OnUseItem;
+            @UseItem.performed -= instance.OnUseItem;
+            @UseItem.canceled -= instance.OnUseItem;
+            @DeselectItem.started -= instance.OnDeselectItem;
+            @DeselectItem.performed -= instance.OnDeselectItem;
+            @DeselectItem.canceled -= instance.OnDeselectItem;
         }
 
         public void RemoveCallbacks(IPlayerInputActions instance)
@@ -456,7 +514,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
         void OnSpeed(InputAction.CallbackContext context);
         void OnUseItem1(InputAction.CallbackContext context);
         void OnUseItem2(InputAction.CallbackContext context);
-        void OnInventory(InputAction.CallbackContext context);
-        void OnPause(InputAction.CallbackContext context);
+        void OnToggleInventory(InputAction.CallbackContext context);
+        void OnTogglePauseMenu(InputAction.CallbackContext context);
+        void OnUseItem(InputAction.CallbackContext context);
+        void OnDeselectItem(InputAction.CallbackContext context);
     }
 }

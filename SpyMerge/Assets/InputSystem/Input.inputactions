@@ -1,5 +1,5 @@
 {
-    "name": "PlayerInput",
+    "name": "Input",
     "maps": [
         {
             "name": "PlayerInput",
@@ -69,7 +69,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Inventory",
+                    "name": "ToggleInventory",
                     "type": "Button",
                     "id": "3ba2aa45-af39-4c3b-9ce3-32de5721f9d0",
                     "expectedControlType": "Button",
@@ -78,9 +78,27 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Pause",
+                    "name": "TogglePauseMenu",
                     "type": "Button",
                     "id": "bd1ed9b0-b73b-4ff0-982d-7f50621c9983",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UseItem",
+                    "type": "Button",
+                    "id": "59c4ede4-4409-41e5-8282-d4213917c955",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DeselectItem",
+                    "type": "Button",
+                    "id": "c0eabb3d-383f-42ee-ac5a-0081b2e24f70",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -227,7 +245,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Inventory",
+                    "action": "ToggleInventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -238,7 +256,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pause",
+                    "action": "TogglePauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "292ffed0-d522-4cad-9686-7e2a15fa0631",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "683d630a-1e3a-4f56-a64e-c99a0ff6cabc",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DeselectItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
