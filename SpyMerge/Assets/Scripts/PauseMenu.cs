@@ -12,7 +12,11 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseMenu.SetActive(true);
-        Time.timeScale = 0;
+        if (pauseMenu.activeSelf)
+        {
+            Time.timeScale = 0;
+        }
+        
     }
     
     public void Menu()
@@ -24,7 +28,10 @@ public class PauseMenu : MonoBehaviour
     public void Play()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = 1;
+        if (!pauseMenu.activeSelf)
+        {
+            Time.timeScale = 1;
+        }
     }
 
     public void Guide()
@@ -41,8 +48,19 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        pauseMenu.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1;
+        if (pauseMenu.activeSelf)
+        {
+            Time.timeScale = 0;
+            Debug.Log("No run");
+
+        }
+        else
+        {
+            Time.timeScale = 1;
+            Debug.Log("Time run");
+        }
     }
 
 
