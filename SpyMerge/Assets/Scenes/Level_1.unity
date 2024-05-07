@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028326, g: 0.22571333, b: 0.30692202, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1816,6 +1816,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Key (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5841584010038413821, guid: 336476df47f7e0d41b76190c64644fd0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Key
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2559,6 +2564,11 @@ PrefabInstance:
     - target: {fileID: 5841584010038413821, guid: 336476df47f7e0d41b76190c64644fd0,
         type: 3}
       propertyPath: m_Name
+      value: Key
+      objectReference: {fileID: 0}
+    - target: {fileID: 5841584010038413821, guid: 336476df47f7e0d41b76190c64644fd0,
+        type: 3}
+      propertyPath: m_TagString
       value: Key
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7718,7 +7728,7 @@ GameObject:
   - component: {fileID: 1755873422}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8046,6 +8056,11 @@ PrefabInstance:
     - target: {fileID: 4736061251346895788, guid: d7e07acf2142f2f44a2802e3d9579c8a,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4736061251346895788, guid: d7e07acf2142f2f44a2802e3d9579c8a,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7295922492777365819, guid: d7e07acf2142f2f44a2802e3d9579c8a,

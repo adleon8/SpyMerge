@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    
     private Transform player;
     public float chaseRange = 10f;
     public float moveSpeed = 5f;
     public float chaseSpeed;
     public float changeDirectionInterval = 3f;
-    public LayerMask obstacleLayer;
 
     private Rigidbody enemyRigidbody;
     private bool isChasing = false;
@@ -29,21 +26,15 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        // Check if player color is different from enemy color
         bool differentColor = !player.GetComponent<Renderer>().material.color.Equals(GetComponent<Renderer>().material.color);
-
-        // Check if player is crawling
         bool isPlayerCrawling = player.GetComponent<PlayerController>().IsCrawling;
 
-        if (isChasing && differentColor && !isPlayerCrawling&&PlayerController.Instance.isSpawning==false)
+        if (isChasing && differentColor && !isPlayerCrawling && !PlayerController.Instance.isSpawning)
         {
-         //   isChasing = true;
             ChasePlayer();
         }
         else
         {
-         //   isChasing = false;
             if (Time.time >= nextDirectionChangeTime)
             {
                 ChooseRandomDirection();
@@ -57,12 +48,9 @@ public class EnemyMovement : MonoBehaviour
     {
         if (isChasing)
         {
-           
             Vector3 direction = (player.position - transform.position).normalized;
             Vector3 movePosition = transform.position + direction * chaseSpeed * Time.deltaTime;
             enemyRigidbody.MovePosition(movePosition);
-
-            // Rotate towards the player
             transform.LookAt(player);
         }
     }
@@ -88,14 +76,13 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.collider.CompareTag("Wall"))
         {
-            // Change direction upon colliding with a wall
             ChooseRandomDirection();
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag=="Player")
+        if (other.tag == "Player")
         {
             isChasing = true;
         }
@@ -108,5 +95,4 @@ public class EnemyMovement : MonoBehaviour
             isChasing = false;
         }
     }
-    
 }
