@@ -161,17 +161,44 @@ public class PlayerController : MonoBehaviour
         Shooting();
         Crawling();
 
-        /* MIGHT BE NEEDED
+        // MIGHT BE NEEDED
         if (currentItemUI != null)
         {
-            itemUsingInstruction.gameObject.SetActive(true);
+            //   itemUsingInstruction.gameObject.SetActive(true);
+           
         }
         else
         {
-            itemUsingInstruction.gameObject.SetActive(false);
+        //    itemUsingInstruction.gameObject.SetActive(false);
         }
-        
-        */
+        //if (UnityEngine.Input.GetMouseButtonDown(0) && currentItemUI != null)
+        //{
+        //    if (currentItemUI.itemType == ItemType.TranquilizerGun)
+        //    {
+        //        GameObject go = Instantiate(transquillizerPrefab);
+        //        //    Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,Camera.main.nearClipPlane));
+        //        go.transform.position = transform.position;
+        //        Ray ray = Camera.main.ScreenPointToRay(UnityEngine.Input.mousePosition);
+        //        RaycastHit hit;
+        //        if (Physics.Raycast(ray, out hit, 1000))
+        //        {
+        //            go.transform.LookAt(hit.point);
+        //        }
+        //    }
+        //    else if (currentItemUI.itemType == ItemType.Mine)
+        //    {
+        //        GameObject go = Instantiate(minePrefab);
+        //        go.transform.position = new Vector3(transform.position.x, transform.position.y - 0.8f, transform.position.z);
+        //    }
+        //    UseItem();
+
+        //}
+        //if (UnityEngine.Input.GetMouseButtonDown(1) && currentItemUI != null)
+        //{
+        //    currentItemUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        //    Cursor.SetCursor(default, Vector2.zero, CursorMode.Auto);
+        //    currentItemUI = null;
+        //}
     }
 
 

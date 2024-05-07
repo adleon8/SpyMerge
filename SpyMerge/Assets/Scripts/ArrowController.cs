@@ -5,12 +5,17 @@ using UnityEngine;
 public class ArrowSignController : MonoBehaviour
 {
     public GameObject arrowSignPrefab; // 화살표 표시 프리팹
-    public Transform player; // 플레이어의 Transform
+    private Transform player; // 플레이어의 Transform
 
     public float activationDistance = 5f; // 화살표가 활성화되는 거리
 
     private GameObject arrowSignInstance; // 생성된 화살표 표시 오브젝트의 참조
 
+
+    private void Start()
+    {
+        player = GameObject.Find("Player").transform;
+    }
     void Update()
     {
         // 플레이어와 화살표 사이의 거리 계산
