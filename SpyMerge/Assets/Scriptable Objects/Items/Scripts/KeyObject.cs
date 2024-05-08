@@ -11,5 +11,6 @@ public class KeyObject : ItemObject
     public void Awake()
     {
         type = ItemType.Key;
+        id = 2;
     }
 }

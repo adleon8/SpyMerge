@@ -6,6 +6,7 @@ using UnityEngine;
 
 public abstract class ItemObject : ScriptableObject
 {
+    public int id;
     public GameObject inventoryPrefab;
     public GameObject worldPrefab;
     public ItemType type;

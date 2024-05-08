@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015c26a7a2573ac49bfd417f9d11556f, type: 3}
   m_Name: Projectile
   m_EditorClassIdentifier: 
+  id: 4
   inventoryPrefab: {fileID: 6200715898214236191, guid: a403434440a1e894f8cee949b4cc466c,
     type: 3}
   worldPrefab: {fileID: 6172151553999330057, guid: 3023a43d6843bb24a8fe32b3d6f34cdb,
     type: 3}
-  type: 0
+  type: 1
   description: 'Projectile.
 
     You can throw projectiles at the enemy'

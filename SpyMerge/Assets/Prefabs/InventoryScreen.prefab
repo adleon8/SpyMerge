@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf1b9ee0ea75434ab64ac0d172147bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: e329324143ad5074aa8347dd6f6f55e1, type: 2}
+  inventory: {fileID: 11400000, guid: 66b46b21b3bcea3438524d5a0456d833, type: 2}
   x_start: -180
   y_start: 80
   x_space_between_item: 180

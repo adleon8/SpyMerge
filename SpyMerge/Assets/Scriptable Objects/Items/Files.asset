@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e76bd627fed6143a55aca4c8b97270, type: 3}
   m_Name: Files
   m_EditorClassIdentifier: 
+  id: 1
   inventoryPrefab: {fileID: 6200715898214236191, guid: 8a0f81a37c5bb6c4db75bbb00a701de3,
     type: 3}
   worldPrefab: {fileID: 8686790620191993074, guid: 079eb212c0ba85348b49da3f6ae202ab,
