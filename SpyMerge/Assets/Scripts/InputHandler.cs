@@ -18,11 +18,11 @@ public class InputHandler : MonoBehaviour
     }
 
 
-    public void OnToggleInventory(InputAction.CallbackContext context)
-    {
-        if (context.performed && playerController != null)
-            playerController.ToggleInventory();
-    }
+    //public void OnToggleInventory(InputAction.CallbackContext context)
+    //{
+    //    if (context.performed && playerController != null)
+    //        playerController.ToggleInventory();
+    //}
 
     public void OnUseItem(InputAction.CallbackContext context)
     {

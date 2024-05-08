@@ -23,20 +23,20 @@ public class Tranquilizer : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            // other.GetComponent<EnemyMovement>().enabled = false;
+            other.GetComponent<EnemyMovement>().enabled = false;
             Destroy(gameObject);
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
+    //private void OnCollisionEnter(Collision collision)
+    //{
 
-        if (collision.gameObject.tag == "Enemy")
-        {
-            //collision.gameObject.GetComponent<EnemyMovement>().enabled = false;
-            Destroy(gameObject);
-        }
-    }
+    //    if (collision.gameObject.tag == "Enemy")
+    //    {
+    //        collision.gameObject.GetComponent<EnemyMovement>().enabled = false;
+    //        Destroy(gameObject);
+    //    }
+    //}
 
     private void DestroySelf()
     {

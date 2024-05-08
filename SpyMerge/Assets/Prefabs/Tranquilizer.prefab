@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8649971844137515749}
   - component: {fileID: 7766823874896775896}
   - component: {fileID: 6802261798148768107}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tranquilizer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -118,4 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624ba35f25ae0f84b92055a860ed713b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 40

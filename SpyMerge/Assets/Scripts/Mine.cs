@@ -6,11 +6,20 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Enemy")
+    //    {
+    //        Destroy(collision.gameObject);
+    //        Destroy(gameObject);
+    //    }
+    //}
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (other.tag == "Enemy")
         {
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }
