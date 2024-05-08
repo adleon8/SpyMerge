@@ -15,6 +15,8 @@ public class TranquilizerGun : ItemObject
     public void Awake()
     {
         type = ItemType.TranquilizerGun;
+        id = 5;
+
     }
 
     public override void Use(GameObject player)

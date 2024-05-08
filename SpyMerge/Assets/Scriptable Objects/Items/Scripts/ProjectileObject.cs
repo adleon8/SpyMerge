@@ -11,5 +11,6 @@ public class ProjectileObject : ItemObject
     public void Awake()
     {
         type = ItemType.Projectile;
+        id = 4;
     }
 }

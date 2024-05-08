@@ -14,6 +14,7 @@ public class MineObject : ItemObject
     public void Awake()
     {
         type = ItemType.Mine;
+        id = 3;
     }
 
     public override void Use(GameObject player)

@@ -35,33 +35,43 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
             return;
         }
 
+        LoadDatabase();
+
         // Ensures the database is loaded
+        if (!database.GetItem.ContainsKey(_item.id))
+        {
+            Debug.Log("Item not recognized by database: " + _item.name);
+            return;
+        }
+
+        InventorySlot slot = Container.Find(s => s.item.id == _item.id);
+        if (slot != null)
+        {
+            slot.AddAmount(_amount);
+        }
+        else
+        {
+            Container.Add(new InventorySlot(_item.id, _item, _amount));
+        }
+
+    }
+
+    public void LoadDatabase() 
+    { 
         if (database == null)
+        {
 #if UNITY_EDITOR
             database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Database.asset", typeof(ItemDatabaseObject));
 #else
             database = Resources.Load<ItemDatabaseObject>("Database");
 #endif
+        }
         if (database == null)
         {
             Debug.Log("Fail database");
-            return;
+            //return;
         }
 
-        if (!database.GetId.ContainsKey(_item))
-        {
-            Debug.Log("Item not recognized by database: " + _item.name);
-        }
-
-        InventorySlot existingSlot = Container.Find(InventorySlot => InventorySlot.item == _item);
-        if (existingSlot != null)
-        {
-            existingSlot.AddAmount(_amount);
-        }
-        else
-        {
-            Container.Add(new InventorySlot(database.GetId[_item], _item, _amount));
-        }
     }
 
     public ItemObject GetItem(ItemType itemType)

@@ -415,7 +415,8 @@ MonoBehaviour:
   missionText: {fileID: 0}
   escapeText: {fileID: 0}
   inventory: {fileID: 11400000, guid: 66b46b21b3bcea3438524d5a0456d833, type: 2}
-  inventoryScreen: {fileID: 0}
+  inventoryScreen: {fileID: 5531418084949611184, guid: f4db67eb053f45a49a20d8d484f91f65,
+    type: 3}
 --- !u!114 &2365966305825064505
 MonoBehaviour:
   m_ObjectHideFlags: 0

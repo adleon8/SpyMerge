@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51b6fd7f8f00304993d2d06736432e5, type: 3}
   m_Name: Tranquilizer
   m_EditorClassIdentifier: 
+  id: 5
   inventoryPrefab: {fileID: 6200715898214236191, guid: a403434440a1e894f8cee949b4cc466c,
     type: 3}
   worldPrefab: {fileID: 707819194849439942, guid: 41cd76c965fbeaf4bac54f0e2b0d483a,

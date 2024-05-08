@@ -11,5 +11,6 @@ public class FilesObject : ItemObject
     public void Awake()
     {
         type = ItemType.Files;
+        id = 1;
     }
 }
