@@ -48,5 +48,9 @@ public class Rock : MonoBehaviour
             Debug.Log("Hit enemy");
             Destroy(collision.gameObject);
         }
+        if (collision.gameObject.CompareTag("Target"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
