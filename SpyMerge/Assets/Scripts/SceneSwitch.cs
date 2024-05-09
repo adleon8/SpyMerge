@@ -13,14 +13,18 @@ public class SceneSwitch : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (sceneSwitchTo==4&&other.GetComponent<PlayerController>().hasFile==true)
+            if (sceneSwitchTo==2&&other.GetComponent<PlayerController>().hasFile==true)
             {
                 GameObject.Find("Canvas").transform.Find("Winscreen").gameObject.SetActive(true);
                 Time.timeScale = 0;
             }
+            else
+            {
+                SceneManager.LoadScene(sceneSwitchTo);
+            }
             //   SceneManager.LoadScene(sceneSwitchTo);
 
-            SceneManager.LoadScene(sceneSwitchTo);
+           
         }
     }
 }
