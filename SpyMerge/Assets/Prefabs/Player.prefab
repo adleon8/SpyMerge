@@ -396,7 +396,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   minSpinDistance: 5
-  enemies: {fileID: 4758652536674555696, guid: 34385e06b683fe4458b2694c191e1336, type: 3}
   isSpawning: 0
   minPickUpDistance: 8
   projectileBar: {fileID: 0}
@@ -415,8 +414,7 @@ MonoBehaviour:
   missionText: {fileID: 0}
   escapeText: {fileID: 0}
   inventory: {fileID: 11400000, guid: 66b46b21b3bcea3438524d5a0456d833, type: 2}
-  inventoryScreen: {fileID: 5531418084949611184, guid: f4db67eb053f45a49a20d8d484f91f65,
-    type: 3}
+  inventoryScreen: {fileID: 0}
 --- !u!114 &2365966305825064505
 MonoBehaviour:
   m_ObjectHideFlags: 0

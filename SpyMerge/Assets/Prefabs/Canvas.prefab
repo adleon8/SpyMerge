@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90595b4abe24166478df8cfb464dcafd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 1
+  itemType: 3
   aimCursorTexture: {fileID: 2800000, guid: c26776f633c555045a20d850dd2155e4, type: 3}
   item: {fileID: 11400000, guid: e9d9d7ef2fca3b046bc92a244f68fdd1, type: 2}
 --- !u!1 &778187905514100680

@@ -123,16 +123,16 @@ public class PlayerController : MonoBehaviour
 
         Instance = this;
         // Singleton setup
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // Keeps the player object consistent across scenes
-        }
-        else if (Instance != this)
-        {
-            Destroy(gameObject); // Ensures only one instance of this GameObject exists
-            return;
-        }
+        //if (Instance == null)
+        //{
+        //    Instance = this;
+        //    DontDestroyOnLoad(gameObject); // Keeps the player object consistent across scenes
+        //}
+        //else if (Instance != this)
+        //{
+        //    Destroy(gameObject); // Ensures only one instance of this GameObject exists
+        //    return;
+        //}
 
         if (staminaSlider == null)
         {
@@ -167,6 +167,7 @@ public class PlayerController : MonoBehaviour
         {
             if (currentItemUI.itemType == ItemType.TranquilizerGun)
             {
+                Debug.Log("usegun");
                 GameObject go = Instantiate(transquillizerPrefab);
                 //    Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y,Camera.main.nearClipPlane));
                 go.transform.position = transform.position;
@@ -180,7 +181,7 @@ public class PlayerController : MonoBehaviour
             else if (currentItemUI.itemType == ItemType.Mine)
             {
                 GameObject go = Instantiate(minePrefab);
-                go.transform.position = new Vector3(transform.position.x, transform.position.y - 0.8f, transform.position.z);
+                go.transform.position = new Vector3(transform.position.x, transform.position.y - 0.8f, transform.position.z+4);
             }
             UseItem();
 

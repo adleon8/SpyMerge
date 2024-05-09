@@ -269,12 +269,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseRange: 10
-  moveSpeed: 10
-  chaseSpeed: 30
+  moveSpeed: 5
+  chaseSpeed: 15
   changeDirectionInterval: 3
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!65 &7155464559606954538
 BoxCollider:
   m_ObjectHideFlags: 0

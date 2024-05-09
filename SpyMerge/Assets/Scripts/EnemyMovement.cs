@@ -57,7 +57,7 @@ public class EnemyMovement : MonoBehaviour
 
     void MoveRandomly()
     {
-        Vector3 movePosition = transform.position + randomDirection * moveSpeed * Time.deltaTime;
+        Vector3 movePosition = transform.position + randomDirection * moveSpeed*Time.deltaTime;
         transform.LookAt(transform.position + randomDirection);
         enemyRigidbody.MovePosition(movePosition);
         if (Time.time >= nextDirectionChangeTime)
