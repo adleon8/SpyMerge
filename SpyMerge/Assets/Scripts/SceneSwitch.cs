@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitch : MonoBehaviour
 {
+    public InventoryObject inventory;
     public int sceneSwitchTo;
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
@@ -21,6 +22,7 @@ public class SceneSwitch : MonoBehaviour
             else
             {
                 SceneManager.LoadScene(sceneSwitchTo);
+                inventory.Container.Clear();
             }
             //   SceneManager.LoadScene(sceneSwitchTo);
 

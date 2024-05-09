@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject instructions;
-
+    [SerializeField] InventoryObject inventory;
 
     public void Pause()
     {
@@ -23,6 +23,7 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("MenuScene");
         Time.timeScale = 1;
+        inventory.Container.Clear();
     }
 
     public void Play()
@@ -61,6 +62,8 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 1;
             Debug.Log("Time run");
         }
+        inventory.Container.Clear();
+
     }
 
 

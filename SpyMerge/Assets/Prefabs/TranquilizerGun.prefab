@@ -101,7 +101,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 707819194849439942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66c8964f0e6caa6409bf78d74c742603, type: 3}
+  m_Script: {fileID: 11500000, guid: 370c2d36960cc6848aa76b3026312175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 6e90844f76ea0b44886e3db3906c531f, type: 2}
+  item: {fileID: 11400000, guid: 3c848dd469673664abd24318dd102faf, type: 2}

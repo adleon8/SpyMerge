@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961081ac76c4fe5488c310af9a03b407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 8
   minSpinDistance: 5
   isSpawning: 0
   minPickUpDistance: 8

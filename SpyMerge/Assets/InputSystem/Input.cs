@@ -110,21 +110,21 @@ public partial class @Input: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""UseItem"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""59c4ede4-4409-41e5-8282-d4213917c955"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""DeselectItem"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""c0eabb3d-383f-42ee-ac5a-0081b2e24f70"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [

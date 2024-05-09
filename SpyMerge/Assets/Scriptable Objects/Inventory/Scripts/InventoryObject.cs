@@ -37,12 +37,12 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
         LoadDatabase();
 
-        // Ensures the database is loaded
-        if (!database.GetItem.ContainsKey(_item.id))
-        {
-            Debug.Log("Item not recognized by database: " + _item.name);
-            return;
-        }
+        // Commenting out for testing purposes
+        // if (!database.GetItem.ContainsKey(_item.id))
+        // {
+        //     Debug.Log("Item not recognized by database: " + _item.name);
+        //     return;
+        // }
 
         InventorySlot slot = Container.Find(s => s.item.id == _item.id);
         if (slot != null)
@@ -53,26 +53,31 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         {
             Container.Add(new InventorySlot(_item.id, _item, _amount));
         }
-
     }
 
-    public void LoadDatabase() 
-    { 
+
+    public void LoadDatabase()
+    {
         if (database == null)
         {
 #if UNITY_EDITOR
-            database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Database.asset", typeof(ItemDatabaseObject));
+        database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Database.asset", typeof(ItemDatabaseObject));
+        Debug.Log("Database loaded in Editor");
 #else
             database = Resources.Load<ItemDatabaseObject>("Database");
+            Debug.Log("Database loaded at Runtime");
 #endif
         }
         if (database == null)
         {
-            Debug.Log("Fail database");
-            //return;
+            Debug.LogError("Failed to load the database.");
         }
-
+        else
+        {
+            Debug.Log("Database successfully loaded.");
+        }
     }
+
 
     public ItemObject GetItem(ItemType itemType)
     {
@@ -113,10 +118,10 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         // Re-link items by ID from a loaded database, ensure the database is not called here.
         foreach (var slot in Container)
         {
-            if (database != null && database.GetItem.ContainsKey(slot.ID))
-                slot.item = database.GetItem[slot.ID];
+            if (database != null && database.GetItem.ContainsKey(slot.id))
+                slot.item = database.GetItem[slot.id];
             else
-                Debug.LogError("Failed to link item ID: " + slot.ID);
+                Debug.LogError("Failed to link item ID: " + slot.id);
         }
     }
 
@@ -128,12 +133,12 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 [System.Serializable]
 public class InventorySlot
 {
-    public int ID;
+    public int id;
     public ItemObject item;
     public int amount;
     public InventorySlot(int _id, ItemObject _item, int _amount)
     {
-        ID = _id;
+        id = _id;
         item = _item;
         amount = _amount;
     }
